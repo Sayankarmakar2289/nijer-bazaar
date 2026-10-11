@@ -1,26 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --forest-teal: #123F3A;
+  --fresh-lime: #CBF379;
+  --warm-ivory: #FFF9ED;
+  --market-coral: #FF8068;
+  --deep-ink: #1A302D;
+  --soft-sage: #E8F3E9;
+  --white: #FFFFFF;
+  --muted-slate: #64748B;
+  --soft-border: #E4EAE3;
+  --success: #16865D;
+  --warning: #D97706;
+  --error: #DC4545;
+
+  --background: var(--warm-ivory);
+  --foreground: var(--deep-ink);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-forest-teal: #123F3A;
+  --color-fresh-lime: #CBF379;
+  --color-warm-ivory: #FFF9ED;
+  --color-market-coral: #FF8068;
+  --color-deep-ink: #1A302D;
+  --color-soft-sage: #E8F3E9;
+  --color-muted-slate: #64748B;
+  --color-soft-border: #E4EAE3;
+  --color-success: #16865D;
+  --color-warning: #D97706;
+  --color-error: #DC4545;
+  --font-sans: 'Manrope', sans-serif;
+  --font-bengali: 'Hind Siliguri', sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Manrope', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--soft-sage);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--muted-slate);
+  border-radius: 3px;
+}
+
+/* Focus ring for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--forest-teal);
+  outline-offset: 2px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Demo banner */
+.demo-banner {
+  background: var(--forest-teal);
+  color: var(--fresh-lime);
+  text-align: center;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Product image placeholder */
+.img-placeholder {
+  background: linear-gradient(135deg, var(--soft-sage) 0%, var(--soft-border) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-slate);
+  font-size: 2rem;
 }
